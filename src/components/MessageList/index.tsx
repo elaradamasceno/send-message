@@ -20,7 +20,7 @@ export function MessageList(){
 
   return (
     <S.MessageListWrapper>
-      {/* <img src={LogoImg} alt="Vite Logo" /> */}
+      <img src={LogoImg} alt="Vite Logo" />
 
       { messages && messages.map((message) => {
         return (

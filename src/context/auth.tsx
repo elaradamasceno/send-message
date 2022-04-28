@@ -7,6 +7,7 @@ import { UserType } from '../types/user.type';
 type AuthContextProps = {
   user: UserType | null
   signInUrl: string
+  signOut: () => void
 }
 
 type AuthProviderProps = {
@@ -31,41 +32,44 @@ const AuthProvider = (props: AuthProviderProps) => {
     setUser(user);
   }
 
-  console.log('testando')
+  const signOut = async () => {
+    setUser(null);
+    localStorage.removeItem('@token');
+  }
 
-  // useEffect(() => {
-  //   const validateGitHubCode = () => {
-  //     const url = window.location.href;
-  //     const hasGithubCode = url.includes('?code=');
+  useEffect(() => {
+    const validateGitHubCode = () => {
+      const url = window.location.href;
+      const hasGithubCode = url.includes('?code=');
   
-  //     if(hasGithubCode){
-  //       const [ urlWithoutCode, gitHubCode] = url.split('?code=');
+      if(hasGithubCode){
+        const [ urlWithoutCode, gitHubCode] = url.split('?code=');
   
-  //       window.history.pushState({}, '', urlWithoutCode);
+        window.history.pushState({}, '', urlWithoutCode);
   
-  //       signIn(gitHubCode)
-  //     }
-  //   }
+        signIn(gitHubCode)
+      }
+    }
 
-  //   validateGitHubCode();
-  // }, []);
+    validateGitHubCode();
+  }, []);
 
-  // useEffect(() => {
-  //   const validateExistToken = async () => {
-  //     const token = localStorage.getItem('@token');
+  useEffect(() => {
+    const validateExistToken = async () => {
+      const token = localStorage.getItem('@token');
   
-  //     if(token){
-  //       const response = await GetProfile(token);
+      if(token){
+        const response = await GetProfile(token);
   
-  //       setUser(response);
-  //     }
-  //   }
+        setUser(response);
+      }
+    }
 
-  //   validateExistToken()
-  // }, [])
+    validateExistToken()
+  }, []) 
 
   return (
-    <AuthContext.Provider value={{signInUrl, user}}>
+    <AuthContext.Provider value={{signInUrl, user, signOut}}>
       {props.children}
     </AuthContext.Provider>
   )
