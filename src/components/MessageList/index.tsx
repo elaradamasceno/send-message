@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { GetMessages, MessageType } from '../../services/messages-api';
 
-import LogoImg from '../../assets/logo.svg';
+import LogoImg from '../../assets/logo-vite.webp';
 import * as S from './styles';
 
 export function MessageList(){
@@ -20,7 +20,10 @@ export function MessageList(){
 
   return (
     <S.MessageListWrapper>
-      <img src={LogoImg} alt="Vite Logo" />
+      <div>
+        <img src={LogoImg} alt="Vite Logo" />
+        <h1>ViteJs</h1>
+      </div>
 
       { messages && messages.map((message) => {
         return (

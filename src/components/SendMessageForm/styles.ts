@@ -39,7 +39,7 @@ export const UserData = styled.header`
 
     > div{
       padding: ${theme.pxToRem(3)};
-      background: linear-gradient(100deg, #ff008e 0.48%, #ffcd1e 100%);
+      background: linear-gradient(100deg, #8c6ffe 0.48%, #ffcd1e 100%);
       border-radius: 50%;
       line-height: 0;
 
@@ -107,8 +107,8 @@ export const Form = styled.form`
     }
 
     button{
-      background: #ff008e;
-      color: #fff;
+      background: #ffcd1e;
+      color: #1b1b1f;
       align-self: flex-end;
       cursor: pointer;
 

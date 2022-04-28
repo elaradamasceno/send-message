@@ -6,7 +6,7 @@ export const LoginBoxWrapper = styled.div`
   ${({theme}) => css`
     height: 100vh;
     width: 100%;
-    background: #17171a url(${banner}) no-repeat center top;
+    background: #1b1b1f94 url(${banner}) no-repeat center top;
 
     padding: ${theme.pxToRem(440)} ${theme.pxToRem(80)} 0px;
     text-align: center;

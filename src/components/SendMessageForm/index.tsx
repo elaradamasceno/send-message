@@ -7,6 +7,7 @@ export function SendMessageForm(){
   return (
     <S.MessageFormWrapper>
       <button> <VscSignOut size="32"/> Sair</button> 
+      
 
       <S.UserData>
         <div>
@@ -26,7 +27,7 @@ export function SendMessageForm(){
         <textarea 
           name="message" 
           id="message" 
-          placeholder='Digite sua mensagem'
+          placeholder='Deixe sua dúvida'
         />
 
         <button type='submit'>Enviar mensagem</button>

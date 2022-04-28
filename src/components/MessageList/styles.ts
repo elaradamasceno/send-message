@@ -7,9 +7,14 @@ export const MessageListWrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
 
-    > img{
-      height: ${theme.pxToRem(28)};
-      margin: ${theme.pxToRem(32)} 0px;
+    > div{
+      display: flex;
+      align-items: center;
+
+      img{
+        height: ${theme.pxToRem(40)};
+        margin: ${theme.pxToRem(40)} 0px;
+      }
     }
 
   `}
@@ -47,7 +52,7 @@ export const MesssageUser = styled.div`
 
     > div {
       padding: ${theme.pxToRem(2)};
-      background: linear-gradient(100deg, #ff008e 0.48%, #ffcd1e 100%);
+      background: linear-gradient(100deg, #8c6ffe 0.48%, #ffcd1e 100%);
       border-radius: 50%;
       line-height: 0;
 
