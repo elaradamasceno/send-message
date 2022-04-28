@@ -16,3 +16,7 @@ yarn dev
 yarn build
 ```
 
+<!-- ### Comments
+Is required run application <a href="https://github.com/elaradamasceno/node_heat">Node Heat</a>. Is required to, create the file ``` .env ``` with information:
+- REACT_APP_API_URL
+- REACT_APP_CLIENT_ID  -->
