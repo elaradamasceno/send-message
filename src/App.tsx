@@ -9,7 +9,7 @@ export function App() {
   const { user } = useAuth();
 
   return (
-    <ContentWrapper>
+    <ContentWrapper hasUser={!!user}>
       <MessageList />
       {!!user ? <SendMessageForm /> : <LoginBox />}
     </ContentWrapper>

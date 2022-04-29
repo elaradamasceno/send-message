@@ -13,3 +13,9 @@ export const GetMessages = async (): Promise<MessageType[]>  => {
 
   return data
 }
+
+export const SendMessages = async (message: string) => {
+  const { data } = await api.post('messages', {message});
+
+  return data
+}

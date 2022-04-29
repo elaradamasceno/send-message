@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState, useEffect, useMemo } from "react";
+import { api } from "../services/api";
 
 import { Authenticate } from "../services/authenticate-api";
 import { GetProfile } from "../services/profile-api";
@@ -28,6 +29,7 @@ const AuthProvider = (props: AuthProviderProps) => {
     const resp = await Authenticate(gitHubCode);
     const {token, user} = resp;
 
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
     localStorage.setItem('@token', token);
     setUser(user);
   }
